@@ -1,6 +1,7 @@
 let capctchachecked = false;
 function beforesubmit(event) {
   if (capctchachecked) {
+    console.log("Captcha checked");
     let outputdate = document.querySelector(".outputdate");
     let inputdate = document.querySelector(".inputdate");
 
@@ -11,6 +12,7 @@ function beforesubmit(event) {
     let formattedDate = new Date(inputdate.value).toLocaleDateString("en-IN");
     outputdate.value = formattedDate;
   } else {
+    console.log("Captcha not checked");
     alert("Please check the Recaptcha box to submit the lead form");
     event.preventDefault(); //This will stop the submission of the form
   }
